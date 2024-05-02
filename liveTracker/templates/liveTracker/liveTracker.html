@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+Live - FPL Data Analyser
+{% endblock title %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Live Tracking</h1>
+</div>
+
+<div class="main-block">
+
+    {% if current_fixtures is not None %}
+        <div>
+            <h2>This Week's Fixtures:</h2>
+        </div>
+        {% for fixture in current_fixtures %}
+        <div class="row">
+            <div class="col-4">
+                {{ fixture.team_h }}
+            </div>
+            <div class="col-4">
+            {% if fixture.started %}
+                {{ fixture.team_h_score }} - {{ fixture.team_a_score }}
+            {% else %}
+                Kickoff: {{ fixture.kickoff_time }}
+            {% endif %}
+            </div>
+            <div class="col-4">
+                {{ fixture.team_a }}
+            </div>            
+        </div>
+        {% endfor %}
+
+    {% endif %}
+
+    {% if next_fixtures is not None %}
+        <div>
+            <h2>Next Week's Fixtures:</h2>
+        </div>
+        {% for fixture in next_fixtures %}
+        <div class="row">
+            <div class="col-4">
+                {{ fixture.team_h }}
+            </div>
+            <div class="col-4">
+            {% if fixture.started %}
+                {{ fixture.team_h_score }} - {{ fixture.team_a_score }}
+            {% else %}
+                Kickoff: {{ fixture.kickoff_time }}
+            {% endif %}
+            </div>
+            <div class="col-4">
+                {{ fixture.team_a }}
+            </div>            
+        </div>
+        {% endfor %}
+
+    {% endif %}
+</div>
+
+{% endblock page_content %}

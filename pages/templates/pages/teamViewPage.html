@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Team - FPL Data Analyser
+{% endblock title %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Your Team</h1>
+</div>
+
+<div class="main-block">
+    
+    <p>Current Gameweek: {{ current_gameweek }}</p>
+    <p>Your Team ID: {{ team_id }}</p>
+
+    <div class="pitch">
+        <div class="gk row">
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ team.GK.0.full_name }}
+                </div>
+            </div>
+        </div>
+
+        <div class="def row">
+            {% for player in team.DEF %}
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ player.full_name }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+            
+        <div class="mid row">
+            {% for player in team.MID %}
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ player.full_name }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="fwd row">
+            {% for player in team.FWD %}
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ player.full_name }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="table-responsive">
+        <table class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    {% for col in data.columns %}
+                    <th scope="col">
+                        {{col}}
+                    </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for index, row in data.iterrows %}
+                <tr>
+                    {% for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <a class="authbutton" href="/player-stats-predictions">Player Stats & Predictions</a>
+        </div>
+        <div class="col-md-4 col-12">
+            <a class="authbutton" href="/transfer-recommender">Transfer Recommender</a>
+        </div>
+        <div class="col-md-4 col-12">
+            <a class="authbutton" href="/team-pick-recommender">Team Pick Recommender</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock page_content %}

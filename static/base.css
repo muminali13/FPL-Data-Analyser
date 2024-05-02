@@ -1,0 +1,205 @@
+:root {
+    --col-bg: #260b27;
+    --col-bg-lighter: #461547;
+    --col-green:#00f999;
+    --col-green-darker: #04bb82;
+    --col-pitch-green1: rgb(118, 182, 118);
+    --col-pitch-green2: rgb(100, 141, 100);
+    --light: #642565;
+     --dark: #0c040d;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    background-color: var(--col-bg);
+    color: white;
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+}
+
+
+a {
+    color: lightgray;
+    text-transform: uppercase;
+}
+
+ul a:hover{
+  color: var(--col-green-darker) !important;
+}
+.navbar {
+    background-color: var(--col-bg-lighter);
+}
+
+.navbar-brand {
+    padding: 0.5em;
+}
+
+.navbar-toggler {
+    margin-right: 0.5em;
+    padding: 0;
+    border: 0;
+}
+
+nav li{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+li > a:after{
+    content: '';
+    display: block;
+    height: 1.5px;
+    background: var(--col-green-darker);
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+
+li > a:hover:after{
+    transform: scaleX(1);
+    transition: transform .3s;
+}
+
+.nav-active{
+    color: var(--col-green-darker) !important;
+}
+
+.carousel-item {
+    height: 345px;
+}
+
+.carousel-item img {
+    background-color: red;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    width: 60%;
+    height: 100%;
+    top:0;
+    left:20%;
+    pointer-events: none;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 5%, rgba(0,0,0,0.6) 95%, rgba(0,0,0,0) 100%);     
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.main-block {
+    margin: 1em;
+}
+
+.login-box {
+    width: 50%;
+    margin: 1em 25%;
+    text-align: center;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: var(--col-bg-lighter);
+}
+
+.login-box > p {
+    margin: 1em;
+}
+
+.page-header {
+    text-align: center;
+    color: var(--col-green);
+    background-color: var(--col-bg-lighter);
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    margin: 1em 0;
+}
+
+.authbutton {
+    background-color: var(--col-green);
+    color: var(--col-bg);
+    display: inline-block;
+    text-transform: uppercase;
+
+    height: 4em;
+    width: calc(100% - 2em);
+    border-radius: 2em;
+    border: none;
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+
+}
+
+.authbutton:hover {
+    background-color: var(--col-green-darker);
+    color: white
+
+}
+
+form {
+    text-align: left;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    padding-bottom: auto;
+}
+
+.pitch {
+    aspect-ratio: 0.5;
+    min-width: 350px;
+    width: 30%;
+    margin: 2em auto;
+    text-align: center;
+    padding: 40px;
+    
+    background: repeating-linear-gradient(0.25turn, var(--col-pitch-green1), var(--col-pitch-green1) 20%, var(--col-pitch-green2) 20%,  var(--col-pitch-green2) 40%);
+    border: solid 2px white;
+}
+
+.gk, .def, .mid, .fwd {
+    text-align: center;
+    height: 25%;
+}
+
+.player-icon {
+    width: 2em;
+    height: 2em;
+
+    background-color: red;
+    border: solid 4px white;
+    border-radius: 50%;
+
+    margin: 0 auto;
+}
+
+.player-on-pitch {
+    text-align: center;
+}
+
+.table {
+    background-color: var(--light);
+    color: white;
+    border: solid 2px white ;
+}
+
+.table thead {
+    background-color: var(--col-bg-lighter);
+}
+
+footer {
+    background-color: var(--col-bg-lighter);
+    width: 100%;
+    padding: 1em 0 0.5em 0;
+    border-top: white solid 1px;
+    position: sticky;
+    top: 100vh;
+}

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home - FPL Data Analyser
+{% endblock title %}
+
+{% block page_content %}
+
+<section class="hero-carousel">
+    <div id="heroCarousel" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#heroCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#heroCarousel" data-slide-to="1"></li>
+            <li data-target="#heroCarousel" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100"
+                    src="https://wallpapers.com/images/hd/football-background-8543042efgz33p6a.jpg"
+                    alt="First slide">
+                <div class="carousel-caption">
+                    <h3>Welcome to FPL Data Analysis</h3>
+                    <p>Your go-to platform for insightful analytics and predictions for Fantasy Premier League!</p>
+
+                    <div class="cta-buttons">
+                        <a href="#dashboard" class="btn">Get Started</a>
+                        <a href="#about" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"
+                    src="https://thumbs.dreamstime.com/b/predictive-analytics-big-data-analysis-business-intelligence-internet-modern-technology-concept-virtual-screen-145015667.jpg"
+                    alt="Second slide">
+                <div class="carousel-caption">
+                    <h3>Featuring...</h3>
+                    <p>Transfer Recommendation, Player Points Predictor, Team Picker Recommendations, and so many more amazing features! We're sure you'll love it!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://wallpapercave.com/wp/wp10717213.png" alt="Third slide">
+                <div class="carousel-caption">
+                    <h3>Everything You'll Ever Want!</h3>
+                    <p>And all in one place too! Make sure to check out our <a href='/help'>Help Page</a> if you need any assistance!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#heroCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</section>
+
+<section>
+    {% if user.is_authenticated %}
+    <div class="login-box">
+        <p>To view your team stats, team pick recommendations, transfer recommendations...</p>
+
+        <a href="/my-team" class="authbutton">Click Here</a>
+    </div>
+    {% else %}
+    <div class="login-box">
+        <h2>Login...</h2>
+        <p>...to view your team stats, team pick recommendations, transfer recommendations!</p>
+
+        <a href="/login" class="authbutton">Login</a>
+        <a href="/register" class="authbutton">Register</a>
+    </div>
+    {% endif %}
+</section>
+
+<div class="page-header">
+    <h1>Team of the week</h1>
+</div>
+<div class="main-block">
+
+    <p>Current Gameweek: {{ current_gameweek }}</p>
+    <p>Current Top Team ID: {{ team_id }}</p>
+
+    <div class="pitch">
+        <div class="gk row">
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ team.GK.0.full_name }}
+                </div>
+            </div>
+        </div>
+
+        <div class="def row">
+            {% for player in team.DEF %}
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ player.full_name }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+            
+        <div class="mid row">
+            {% for player in team.MID %}
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ player.full_name }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="fwd row">
+            {% for player in team.FWD %}
+            <div class="col">
+                <div class="row">
+                    <span class="player-icon"></span>
+                </div>
+                <div class="row player-on-pitch">
+                    {{ player.full_name }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock page_content %}

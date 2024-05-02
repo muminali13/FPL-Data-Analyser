@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login - FPL Data Analyser
+{% endblock title %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Login</h1>
+</div>
+
+<div class="login-box">
+    <p>Don't have an account? Create one here: <a href="/register">Register</a></p>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+    
+        {{ loginform.as_p }}
+    
+        <input class="authbutton" type="submit" value="Login"/>
+    </form>
+</div>
+
+{% endblock page_content %}

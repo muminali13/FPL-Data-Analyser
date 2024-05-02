@@ -1,0 +1,9 @@
+id,name,short_name,created,closed,rank,max_entries,league_type,scoring,admin_entry,start_event,entry_can_leave,entry_can_admin,entry_can_invite,has_cup,cup_league,cup_qualified,rank_count,entry_percentile_rank,entry_rank,entry_last_rank
+11,Liverpool,team-11,2023-07-05T15:13:48.782621Z,False,,,s,c,,1,False,False,False,True,2361047.0,True,1865416,50,854130,786460
+261,England,region-241,2023-07-05T15:13:53.646381Z,False,,,s,c,,1,False,False,False,True,2350462.0,True,2931640,55,1534875,1419578
+276,Gameweek 1,event-1,2023-07-05T15:13:53.946163Z,False,,,s,c,,1,False,False,False,False,,,8016143,60,4683812,4331031
+314,Overall,overall,2023-07-05T15:13:54.679154Z,False,,,s,c,,1,False,False,False,True,2337883.0,True,10809945,50,4867845,4471273
+316,Second Chance,sc,2023-07-05T15:13:54.716611Z,False,,,s,c,,21,False,False,False,False,,,10809942,45,4834561,4092792
+728995,The Shej League,,2023-08-01T13:54:43.261263Z,False,,,x,c,3358442.0,1,False,False,False,True,2684004.0,True,15,80,12,11
+827316,Sky Sports League,brd-skysports,2023-08-03T15:23:59.274690Z,False,,,s,c,,1,False,False,False,True,2350457.0,True,3329504,55,1728822,1598035
+1856354,Indian Valley,,2023-08-11T20:35:43.545001Z,False,,,x,c,3908460.0,1,False,False,False,True,3332227.0,True,5,60,3,3
